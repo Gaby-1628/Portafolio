@@ -11,7 +11,8 @@
                     <img src="../assets/poryects/outit.png" alt="">
                 </div>
                 <div class="overlay">
-                    <a href="https://outit.com.ar/" target="_blank" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></a>
+                    <a href="https://outit.com.ar/" target="_blank" class="btn-icon">Ver Proyecto <v-icon
+                            name="bi-arrow-bar-right" scale="1.2" /></a>
                 </div>
             </div>
             <div class="box-proyect">
@@ -19,7 +20,8 @@
                     <img src="../assets/poryects/radanet.png" alt="">
                 </div>
                 <div class="overlay">
-                    <a href="https://www.radanet.com.ar/" target="_blank" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></a>
+                    <a href="https://www.radanet.com.ar/" target="_blank" class="btn-icon">Ver Proyecto <v-icon
+                            name="bi-arrow-bar-right" scale="1.2" /></a>
                 </div>
             </div>
             <div class="box-proyect">
@@ -27,7 +29,8 @@
                     <img src="../assets/poryects/mateHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/mate-web" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></router-link>
+                    <router-link to="/mate-web" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></router-link>
                 </div>
             </div>
             <div class="box-proyect">
@@ -35,7 +38,8 @@
                     <img src="../assets/poryects/mav-adminHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/mav-admin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></router-link>
+                    <router-link to="/mav-admin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></router-link>
                 </div>
             </div>
             <div class="box-proyect">
@@ -43,7 +47,8 @@
                     <img src="../assets/poryects/primacy-adminHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/primacy-admin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></router-link>
+                    <button @click="redirect" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></button>
                 </div>
             </div>
             <div class="box-proyect">
@@ -51,7 +56,8 @@
                     <img src="../assets/poryects/primacy-userHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/primacy-user" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2"/></router-link>
+                    <router-link to="/primacy-user" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></router-link>
                 </div>
             </div>
         </div>
@@ -59,6 +65,38 @@
 </template>
 
 <script setup>
+import Swal from 'sweetalert2';
+import router from '../router';
+
+const redirect = () => {
+    Swal.fire({
+        title: "Primacy CRM",
+        text: "A continuación será redirigido a una maqueta interactiva de la App de Primacy CRM",
+        icon: "info",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        // allowOutsideClick: false,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            router.push({ name: 'primacy-admin' });
+        }
+    });
+};
+
 
 </script>
 
@@ -160,4 +198,71 @@ a {
     background: #b8151b;
 }
 
+/* ------------------------------------------------------------ */
+/* ------------------------ RESPONSIVE ------------------------ */
+/* ------------------------------------------------------------ */
+
+@media screen and (max-width: 1024px) {
+    .container-proyects {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        margin: 50px 0 50px 50px;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .border-top {
+        width: 150px;
+    }
+
+    .border-bottom {
+        width: 150px;
+    }
+
+    .container-proyects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px;
+    }
+}
+
+@media screen and (width: 540px) {
+    .container-proyects {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-proyects {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+}
 </style>
