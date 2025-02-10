@@ -26,7 +26,7 @@
         <div class="box__main">
             <div class="container fadeIn">
                 <div class="logo">
-                    <img src="../assets/PRIMACY_LOGO.png" alt="">
+                    <img src="/src/assets/poryects/assets-Primacy/PRIMACY_LOGO.png" alt="">
                     <div class="border-bottom"></div>
                 </div>
                 <div class="login fadeIn">
