@@ -38,6 +38,12 @@
                 </span>
             </div>
         </div>
+        <div class="box-skins_responsive">
+            <span v-for="techno in technoResponsive" :key="techno.name" class="tech-item_responsive"
+                :style="{ color: techno.color }">
+                {{ techno.name }} <v-icon :name="techno.icon" class="icon-responsive" />
+            </span>
+        </div>
         <div class="slaide-container_logo_invert">
             <div class="slaide-track_logo_invert">
                 <div class="slaide" v-for="n in 30" :key="n">
@@ -59,8 +65,8 @@
 import { ref } from "vue";
 
 const technologies = ref([
-    { name: "HTML5", icon: "co-html5", color: "#1BE5DD", marginTop: 0, marginLeft: 210 },
-    { name: "CSS3", icon: "co-css3-shield", color: "#fff", marginTop: 220, marginLeft: -250 },
+    { name: "HTML5", icon: "co-html5", color: "#1BE5DD", marginTop: 230, marginLeft: 210 },
+    { name: "CSS3", icon: "co-css3-shiled", color: "#fff", marginTop: 220, marginLeft: -250 },
     { name: "JavaScript", icon: "co-javascript", color: "#1BE5DD", marginTop: 220, marginLeft: 350 },
     { name: "Vue.js", icon: "co-vue-js", color: "#1BE5DD", marginTop: 400, marginLeft: -270 },
     { name: "React.js", icon: "co-react", color: "#E51B23", marginTop: 70, marginLeft: 20 },
@@ -80,6 +86,30 @@ const technologies = ref([
     { name: "GitLab", icon: "co-gitlab", color: "#fff", marginTop: 200, marginLeft: -200 },
     { name: "Tailwind", icon: "si-tailwindcss", color: "#1BE5DD", marginTop: 140, marginLeft: -120 },
     { name: "npn", icon: "co-npm", color: "#E51B23", marginTop: 180, marginLeft: -120 }
+]);
+
+const technoResponsive = ref([
+    { name: "HTML5", icon: "co-html5", color: "#1BE5DD" },
+    { name: "CSS3", icon: "co-css3-shiled", color: "#fff" },
+    { name: "JavaScript", icon: "co-javascript", color: "#1BE5DD" },
+    { name: "Vue.js", icon: "co-vue-js", color: "#1BE5DD" },
+    { name: "React.js", icon: "co-react", color: "#E51B23" },
+    { name: "Figma", icon: "co-figma", color: "#E51B23" },
+    { name: "Webpack", icon: "co-webpack", color: "#fff" },
+    { name: "Bootstrap", icon: "co-bootstrap", color: "#1BE5DD" },
+    { name: "Git", icon: "bi-git", color: "#fff" },
+    { name: "Firebase", icon: "co-firebase", color: "#E51B23" },
+    { name: "Vitest", icon: "si-vite", color: "#1BE5DD" },
+    { name: "VisualStudio", icon: "co-visual-studio", color: "#1BE5DD" },
+    { name: "Node.js", icon: "fa-node-js", color: "#E51B23" },
+    { name: "APIrest", icon: "fa-database", color: "#E51B23" },
+    { name: "PWA", icon: "si-pwa", color: "#1BE5DD" },
+    { name: "Responsive", icon: "fa-mobile-alt", color: "#fff" },
+    { name: "GitHub", icon: "co-github", color: "#E51B23" },
+    { name: "ServiceWorker", icon: "ri-database-line", color: "#1BE5DD" },
+    { name: "GitLab", icon: "co-gitlab", color: "#fff" },
+    { name: "Tailwind", icon: "si-tailwindcss", color: "#1BE5DD" },
+    { name: "npn", icon: "co-npm", color: "#E51B23" }
 ]);
 </script>
 
@@ -212,5 +242,175 @@ const technologies = ref([
     cursor: pointer;
     transition: all 0.5s;
     animation: floatAnimation 3s ease-in-out infinite alternate;
+}
+
+.tech-item_responsive {
+    display: none;
+}
+
+/* ------------------------------------------------------------ */
+/* ------------------------ RESPONSIVE ------------------------ */
+/* ------------------------------------------------------------ */
+
+@media screen and (max-width: 1300px) {
+    .box-skins {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        margin-top: -100px;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .about-me {
+        width: 100%;
+    }
+
+    .title {
+        width: 100%;
+        margin: 50px 0 50px 50px;
+    }
+
+    .title h1 {
+        font-size: 50px;
+    }
+
+    .border-top {
+        width: 170px;
+    }
+
+    .border-bottom {
+        width: 170px;
+    }
+
+    .box-text {
+        width: 100%;
+        text-align: justify;
+        margin-left: 120px;
+    }
+
+    .paragraph {
+        letter-spacing: 2px;
+        font-size: 18px;
+    }
+
+    .tech-item {
+        display: none;
+    }
+
+    .box-skins_responsive {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 10px;
+        justify-items: center;
+    }
+
+    .tech-item_responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 8px 10px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .tech-item_responsive .icon-responsive {
+        margin-left: 15px;
+        scale: 2.2;
+    }
+
+    .slaide-container_logo_invert,
+    .slaide-container_logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-me {
+        width: 100%;
+    }
+
+    .title {
+        width: 100%;
+        margin: 50px 0 50px 50px;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    .border-top {
+        width: 150px;
+    }
+
+    .border-bottom {
+        width: 150px;
+    }
+
+    .box-text {
+        width: 100%;
+        text-align: justify;
+        margin-left: 60px;
+    }
+
+    .paragraph {
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+    .tech-item {
+        display: none;
+    }
+
+    .box-skins_responsive {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 10px;
+        justify-items: center;
+    }
+
+    .tech-item_responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 8px 10px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .tech-item_responsive .icon-responsive {
+        margin-left: 5px;
+        scale: 1;
+    }
+
+    .slaide-container_logo_invert,
+    .slaide-container_logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .box-text {
+        width: 100%;
+        text-align: justify;
+        margin-left: 50px;
+    }
+
+    .paragraph {
+        letter-spacing: 1px;
+        font-size: 12px;
+    }
 }
 </style>
