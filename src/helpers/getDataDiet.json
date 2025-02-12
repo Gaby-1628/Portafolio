@@ -1,0 +1,104 @@
+[
+    {
+        "type": "title",
+        "content": ["DIETAS"]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Para lograr una alimentación saludable, las GAPA ofrece 10 recomendaciones contempladas en los siguientes mensajes:"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Incorporar a diario alimentos de todos los grupos y realizar al menos 30 minutos de actividad física.",
+            "Tomar a diario vasos de agua segura.",
+            "Consumir a diario 5 porciones de frutas y verduras en variedad de tipos y colores.",
+            "Reducir el uso de sal y el consumo de alimentos con alto contenido de sodio.",
+            "Limitar el consumo de bebidas azucaradas y de alimentos con elevado contenido de grasas, azúcar y sal.",
+            "Consumir diariamente leche, yogur o queso, preferentemente descremados.",
+            "Al consumir carnes quitarle la grasa visible, aumentar el consumo de pescado e incluir huevo.",
+            "Consumir legumbres, cereales preferentemente integrales, papa, batata, choclo o mandioca.",
+            "Consumir aceite crudo como condimento, frutas secas o semillas.",
+            "El consumo de bebidas alcohólicas debe ser responsable. Los niños, adolescentes y mujeres embarazadas no deben consumirlas. Evitarlas siempre al conducir."
+        ]
+    },
+    {
+        "type": "image",
+        "content": [
+            "https://res.cloudinary.com/willi2500/image/upload/v1728354665/primacy/graph_alimentacion_1_mjkujd.jpg"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "La gráfica de la alimentación diaria diseñada especialmente para nuestro país, acompaña a las recomendaciones y hace referencia al consumo de diferentes grupos de alimentos que se sugiere distribuir a lo largo del día."
+        ]
+    },
+    {
+        "type": "image",
+        "content": [
+            "https://res.cloudinary.com/willi2500/image/upload/v1728354663/primacy/graph_almuerzo_1_r1f4th.jpg"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Verduras frescas de estación",
+            "Legumbres cereales, papa, pan, pastas",
+            "Carnes y huevo"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Como patrón de referencia se usan las GAPA (Guías Alimentarias para la población argentina)."
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Es saludable consumir al menos 5 porciones por día. 1 porción equivale a 60 gr de pan (1 mignon) o 125 gr en cocido de legumbres o cereales (½ taza), pastas (½ taza), 1 papa mediana o ½ choclo o ½ mandioca chica.",
+            "Promover el consumo de 3 porciones por día. 1 porción equivale a 1 taza de leche líquida o 1 vaso de yogur o 1 rodaja de queso cremoso del tamaño de un mazo de cartas o 1 cucharada tipo postre de queso crema.",
+            "Es saludable consumir 1 porción por día. 1 porción equivalente al tamaño de la palma de la mano de cualquier tipo de carne (pollo, vaca, pescado, cerdo, otras) o 1 huevo.",
+            "Es saludable consumir 2 porciones por día. 1 porción equivale a 1 cucharada sopera de aceite o 1 puñado (puño cerrado) de frutas secas o 1 cucharada sopera de semillas."
+        ]
+    },
+    {
+        "type": "image",
+        "content": [
+            "https://res.cloudinary.com/willi2500/image/upload/v1728354663/primacy/table_1_xuf4er.jpg"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Tienen excesivas cantidades de grasas, azúcares y/o sal, además de conservantes, aditivos, colorantes. Su alta disponibilidad y publicidad alienta al sobreconsumo."
+        ]
+    },
+    {
+        "type": "image",
+        "content": [
+            "https://res.cloudinary.com/willi2500/image/upload/v1728354662/primacy/table_2_xzxk6e.jpg"
+        ]
+    },
+    {
+        "type": "paragraph",
+        "content": [
+            "Galletitas dulces, saladas, amasados de pastelerías (pastelitos fritos, churros, medialunas, bizcochos de grasa, facturas, otros)",
+            "Golosinas, bebidas azucaradas como gaseosas, aguas saborizadas, jugos industrializados y jugos en polvo (para diluir)",
+            "Productos de copetín (maní salado, palitos salados, papas, mandioca y/o batatas fritas, chizitos, otros)",
+            "Embutidos y chacinados (salchichas, chorizo, morcilla y otros)",
+            "Fiambres, achuras, carnes procesadas (preformados de carne o pollo, hamburguesas, bastones de pescado, otros)",
+            "Helados, manteca, dulce de leche, mermeladas (industrializadas)",
+            "Aderezos tales como mayonesa, ketchup, mostaza, salsa golf, salsa de soja, otros."
+        ]
+    },
+    {
+        "type": "image",
+        "content": [
+            "https://res.cloudinary.com/willi2500/image/upload/v1728354662/primacy/table_3_ntbu13.jpg"
+        ]
+    }
+]

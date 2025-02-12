@@ -2,13 +2,12 @@
     <div class="body__container">
         <div class="box__header">
             <div class="waves">
-                <div class="wavesInTopLeft" style="height: 128px; overflow: hidden;">
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <div class="wavesInTopLeft" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150"
+                        preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path d="M-6.54,155.01 C150.33,-9.35 187.02,153.04 267.72,-4.43 L169.52,-20.17 L-0.00,0.00 Z"
                             style="stroke: none; fill: #46B346;"></path>
-                    </svg>
-                </div>
-                <div class="wavesInTopRigth" style="height: 128px; overflow: hidden;">
+                    </svg></div>
+                <div class="wavesInTopRigth" style="height: 150px; overflow: hidden;">
                     <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
                         <path
                             d="M238.93,-2.46 C320.20,279.02 385.10,-0.49 504.73,156.98 L505.87,157.97 L527.87,-22.14 Z"
@@ -17,12 +16,11 @@
                 </div>
             </div>
             <div class="waves__responsive wavesInTopLeft">
-                <div style="height: 150px; overflow: hidden;">
-                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                        style="height: 100%; width: 100%;">
                         <path d="M-9.93,163.86 C84.87,16.23 314.56,137.30 459.03,-6.40 L277.31,-16.23 L-0.00,0.00 Z"
                             style="stroke: none; fill: #488137;"></path>
-                    </svg>
-                </div>
+                    </svg></div>
             </div>
         </div>
         <div class="box__main">
@@ -32,37 +30,52 @@
                     <div class="border-bottom"></div>
                 </div>
                 <div class="login fadeIn">
-                    <h1 class="welcome-message">Login</h1>
+                    <h1 class="welcome-message">SignUp</h1>
                     <div class="border-bottom"></div>
                 </div>
                 <div class="login-form fadeIn">
-                    <div class="box mx-auto" :class="{ 'has-value': username !== '' }">
-                        <input type="email" class="form-control" v-model="username" @input="validateEmail">
-                        <label class="form-label">
+                    <div class="box mx-auto mt-3" :class="{ 'has-value': name !== '' }">
+                        <input type="text" class="form-control" v-model="name">
+                        <label for="exampleFormControlInput1" class="form-label">
                             <v-icon name="fa-regular-user" scale="1" />
-                            Email address
+                            Nombre
+                        </label>
+                    </div>
+                    <div class="box mx-auto mt-3" :class="{ 'has-value': lastname !== '' }">
+                        <input type="text" class="form-control" v-model="lastname">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            <v-icon name="fa-regular-user" scale="1" />
+                            Apellido
+                        </label>
+                    </div>
+                    <div class="box mx-auto mt-3" :class="{ 'has-value': email !== '' }">
+                        <input type="email" class="form-control" v-model="email" @input="validateEmail">
+                        <label for="exampleFormControlInput1" class="form-label">
+                            <v-icon name="md-alternateemail" scale="1" />
+                            Email
                         </label>
                     </div>
                     <p class="text-validation" v-if="emailError">{{ emailError }}</p>
-                    <div class="box mx-auto" :class="{ 'has-value': password !== '' }">
+                    <div class="box mx-auto mt-3" :class="{ 'has-value': password !== '' }">
                         <input type="password" class="form-control" v-model="password" @input="validatePassword">
-                        <label class="form-label">
+                        <label for="exampleFormControlInput1" class="form-label">
                             <v-icon name="ai-closed-access" scale="1.5" />
-                            Password
+                            Contraseña
                         </label>
                     </div>
                     <p class="text-validation" v-if="passwordError">{{ passwordError }}</p>
-                    <button class="btn btn-outline-success" @click="onClick">LOG IN</button>
+                    <button class="btn btn-outline-success mt-4" @click="onClick" :disabled="isLoadingRef">
+                        <span v-show="!isLoadingRef">SIGN UP</span>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                            v-show="isLoadingRef"></span>
+                        <span v-show="isLoadingRef">SIGN UP...</span>
+                    </button>
+                    <p style="color: #46B346; text-align: center;">{{ textActivate }}</p>
+                    <router-link :to="{ name: 'primacy-user' }" type="button" class="btn__arrow">
+                        <v-icon class="icon__arrow" name="bi-arrow-bar-left" color="#080" />
+                        <span class="span_text">Atras</span>
+                    </router-link>
                 </div>
-                <button @click="showModal" class="forgot-password">Olvidaste tu contraseña?</button>
-                <div class="box_signup">
-                    <p>No tienes cuenta? Registrate!</p>
-                    <button type="button" class="btn btn-outline-primary" @click="signup">Registrarse</button>
-                </div>
-                <button @click="installApp" class="btn btn-outline-dark">
-                    Instalar App
-                    <v-icon name="md-installmobile" scale="1.5" />
-                </button>
             </div>
         </div>
         <div class="box__footer">
@@ -94,14 +107,18 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import router from '../../../router';
 import Swal from 'sweetalert2';
 
-const username = ref('');
-const password = ref('');
+const name = ref('');
+const lastname = ref('');
+const email = ref('');
 const emailError = ref('');
+const password = ref('');
 const passwordError = ref('');
+const textActivate = ref('');
+const isLoadingRef = ref(false);
 
 const validateEmail = () => {
     if (!username.value.includes('@')) {
@@ -119,8 +136,9 @@ const validatePassword = () => {
     }
 };
 
-const onClick = () => {
-    if (!username.value || !password.value) {
+const onClick = async (e) => {
+    e.preventDefault();
+    if (!name.value || !lastname.value || !email.value || !password.value) {
         Swal.fire({
             icon: 'error',
             title: 'Error',
@@ -128,36 +146,9 @@ const onClick = () => {
         });
         return;
     }
-    if (emailError.value || passwordError.value) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Corrige los errores antes de continuar'
-        });
-        return;
-    }
-    router.push({ name: 'home-crm' });
+    isLoadingRef.value = true;
+    router.push({ name: 'primacy-user' });
 };
-
-const installApp = () => {
-    alert('Función de instalación simulada');
-};
-
-const showModal = () => {
-    alert('Abrir modal de recuperación de contraseña');
-};
-
-const signup = async () => {
-    await router.push({ name: 'signup' });
-}
-
-onMounted(async () => {
-    document.body.style.overflow = 'hidden';
-});
-
-onBeforeUnmount(() => {
-    document.body.style.overflow = '';
-});
 </script>
 
 <style scoped>
@@ -186,11 +177,11 @@ a {
 .container {
     width: 90%;
     max-width: 400px;
-    height: 650px;
+    height: auto;
     background-color: rgba(255, 255, 255);
     border-radius: 16px;
     box-shadow: 0 10px 16px rgba(18, 159, 51, 0.8);
-    margin: -90px auto 20px;
+    margin: -150px auto 20px;
 }
 
 .logo__header img {
@@ -238,26 +229,26 @@ a {
 .box {
     position: relative;
     margin-bottom: 20px;
-    border-bottom: 2px solid #3e3e3e;
+    border-bottom: 2px solid #000000;
     width: 300px;
 }
 
 .box input {
     width: 100%;
-    height: 40px;
-    margin-top: 20px;
+    height: 35px;
+    margin-top: 10px;
     border: none;
-    padding: 8px;
+    padding: 5px;
     font-size: 14px;
     outline: none;
 }
 
 .box label {
     position: absolute;
-    top: 25px;
+    top: 10px;
     left: 12px;
     font-size: 14px;
-    color: #999;
+    color: #181818;
     transition: all 0.3s ease-out;
 }
 
@@ -275,31 +266,32 @@ a {
 }
 
 .forgot-password {
-    border: none;
-    background-color: transparent;
+    text-decoration: none;
     cursor: pointer;
     font-size: 14px;
     color: #333;
     float: right;
 }
 
-.box_signup {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.form-check {
-    margin-left: 30px;
-    margin-bottom: 20px;
-}
-
 .btn {
     margin-bottom: 20px;
-    width: 100%;
+}
+
+.btn__arrow {
+    height: 50px;
+    border: none;
+    margin-top: 0px;
+    margin-left: 30px;
+}
+
+.span_text {
+    color: #0f9b0f;
+    font-size: 12px;
+    transition: .5s;
+}
+
+.span_text:hover {
+    font-size: 16px;
 }
 
 .waves__responsive {
@@ -307,7 +299,7 @@ a {
 }
 
 .box__footer {
-    margin-top: 0px;
+    margin-top: -150px;
 }
 
 @keyframes fadeIn {
@@ -380,22 +372,9 @@ a {
 /* --------------------------------------------------------------------------------------- */
 
 
-@media screen and (height: 600px) {
-    .logo img {
-        display: none;
-    }
-
-    .logo .border-bottom {
-        margin-top: 10px;
-    }
-
-    .login {
-        display: none;
-    }
-
+@media screen and (max-height: 600px) {
     .box__main {
         width: 100%;
-        height: 50vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -403,24 +382,36 @@ a {
 
     .container {
         width: 80%;
-        height: auto;
-        padding: 0px;
+        padding: 20px;
         margin: auto;
     }
 
-    .box input {
-        height: 30px;
-        margin-top: 16px;
-        font-size: 10px;
+    .logo img {
+        width: 200px;
+        height: 200px;
+        margin-top: 0px;
+        margin-bottom: -10px;
     }
 
-    .box label {
-        top: 15px;
-        font-size: 12px;
+    .welcome-message {
+        display: none;
+    }
+
+    .box {
+        width: 80%;
+        margin: auto;
+    }
+
+    .login-form {
+        margin-top: -25px;
+    }
+
+    .btn__arrow {
+        margin-top: -50px;
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1300px) {
     .box__main {
         width: 100%;
         height: 80vh;
@@ -431,23 +422,33 @@ a {
 
     .container {
         width: 80%;
-        height: auto;
+        height: 750px;
         padding: 20px;
-        margin: 0px auto 100px;
+        margin: -150px auto 0px;
     }
 
     .logo img {
-        margin-top: -10px;
+        margin-top: 40px;
         width: 200px;
         height: 200px;
     }
 
-    .box_signup {
-        margin-top: 10px;
+    .box {
+        width: 80%;
+        margin: auto;
+    }
+
+    .box {
+        margin-bottom: 0px;
+    }
+
+    .btn__arrow {
+        margin-top: 0px;
     }
 
     .box__footer {
-        margin-top: -120px;
+        display: block;
+        margin-top: -140px;
     }
 }
 
@@ -462,60 +463,94 @@ a {
 
     .container {
         width: 80%;
-        height: auto;
+        height: 800px;
         padding: 20px;
-        margin: -40px auto 100px;
+        margin: -80px auto 100px;
     }
 
     .logo img {
-        margin-top: 10px;
-        width: 250px;
-        height: 250px;
+        width: 200px;
     }
 
-    .box_signup {
-        margin-top: 10px;
+    .box {
+        width: 80%;
+        margin: auto;
+    }
+
+    .login-form {
+        margin-top: -25px;
+    }
+
+    .login-form .btn {
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .forgot-password {
+        margin-right: 100px;
+        margin-top: 20px;
+    }
+
+    .box {
+        margin-bottom: 0px;
+    }
+
+    .box input {
+        height: 30px;
+        margin-top: 20px;
+        border: none;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .box label {
+        position: absolute;
+        top: 22px;
+        left: 12px;
+        font-size: 12px;
+        color: #181818;
+        transition: all 0.3s ease-out;
+    }
+
+    .btn__arrow {
+        margin-top: 50px;
     }
 
     .box__footer {
-        margin-top: 0px;
+        margin-top: -25px;
     }
 }
 
 @media screen and (max-width: 900px) {
     .container {
         width: 80%;
-        height: auto;
         padding: 20px;
-        margin: 70px auto 150px;
+        margin: -80px auto -100px;
     }
 
     .logo img {
         width: 200px;
-        height: 200px;
-    }
-
-    .box_signup {
-        margin-top: 80px;
     }
 
     .box__footer {
-        margin-top: -40px;
         position: fixed;
+        margin-top: -60px;
     }
 }
 
 @media screen and (max-width: 800px) {
     .container {
         width: 80%;
-        height: auto;
+        height: 700px;
         padding: 80px;
-        margin: 50px auto 150px;
+        margin: 0px auto 100px;
     }
 
     .logo img {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
+        margin-top: -100px;
     }
 
     .login {
@@ -537,27 +572,30 @@ a {
     }
 
     .box__footer .waves__responsive {
-        margin-top: -40px;
         position: fixed;
+        margin-top: 50px;
     }
 
     .box {
         width: 100%;
+    }
+
+    .box__footer .waves__responsive {
+        position: fixed;
+        margin-top: -35px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .container {
         width: 80%;
-        height: auto;
+        height: 700px;
         padding: 40px;
-        margin: -40px auto 70px;
+        margin: -120px auto 0px;
     }
 
     .logo img {
-        margin-top: -50px;
         width: 200px;
-        height: 200px;
     }
 
     .login {
@@ -567,10 +605,6 @@ a {
     .logo {
         display: block;
         text-align: center;
-    }
-
-    .box_signup {
-        margin-top: 80px;
     }
 
     .waves {
@@ -583,56 +617,64 @@ a {
 
     .box__footer .waves__responsive {
         position: fixed;
-        margin-top: -50px;
     }
 
     .box {
         width: 250px;
+    }
+
+    .box__footer {
+        display: block;
+        margin-top: -80px;
     }
 }
 
 @media screen and (width: 540px) {
+    .body__container {
+        height: 100vh;
+        overflow: hidden;
+    }
+
     .container {
         width: 80%;
-        height: auto;
-        padding: 40px;
+        height: 600px;
+        padding: 20px;
         margin: -150px auto 0px;
     }
 
     .logo img {
-        margin-top: -50px;
         width: 150px;
         height: 150px;
-    }
-
-    .login {
-        display: none;
-    }
-
-    .logo {
-        display: block;
-        text-align: center;
-    }
-
-    .box_signup {
-        margin-top: 50px;
-    }
-
-    .waves {
-        display: none;
-    }
-
-    .waves__responsive {
-        display: block;
-    }
-
-    .box__footer .waves__responsive {
-        position: fixed;
-        margin-top: -90px;
+        margin-top: -50px;
     }
 
     .box {
-        width: 250px;
+        margin-bottom: 0px;
+    }
+
+    .box input {
+        height: 30px;
+        margin-top: 20px;
+        border: none;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .box label {
+        position: absolute;
+        top: 22px;
+        left: 12px;
+        font-size: 12px;
+        color: #181818;
+        transition: all 0.3s ease-out;
+    }
+
+    .btn__arrow {
+        margin-top: 10px;
+    }
+
+    .box__footer {
+        margin-top: -100px;
     }
 }
 
@@ -644,38 +686,44 @@ a {
 
     .container {
         width: 80%;
-        height: auto;
+        height: 550px;
         padding: 20px;
-        margin: -170px auto 0px;
+        margin: -200px auto 0px;
     }
 
     .logo img {
-        margin-top: -20px;
         width: 150px;
         height: 150px;
-    }
-
-    .box_signup {
-        margin-top: 10px;
+        margin-top: -50px;
     }
 
     .box {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
     }
 
     .box input {
         height: 30px;
         margin-top: 20px;
+        border: none;
+        padding: 8px;
         font-size: 10px;
     }
 
     .box label {
-        top: 15px;
+        position: absolute;
+        top: 22px;
+        left: 12px;
         font-size: 12px;
+        color: #181818;
+        transition: all 0.3s ease-out;
     }
 
-    .box__footer .waves__responsive {
-        position: fixed;
+    .btn__arrow {
+        margin-top: 10px;
+    }
+
+    .box__footer {
+        display: block;
         margin-top: -100px;
     }
 }
@@ -688,50 +736,43 @@ a {
 
     .container {
         width: 80%;
-        height: auto;
+        height: 570px;
         padding: 20px;
-        margin: 10px auto 0px;
+        margin: -150px auto -20px;
+    }
+
+    .logo img {
+        width: 150px;
     }
 
     .box {
-        width: 200px;
+        margin-bottom: 0px;
     }
 
-    .box__header .waves__responsive {
-        margin-bottom: -50px;
+    .box input {
+        height: 30px;
+        margin-top: 20px;
+        border: none;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .box label {
+        position: absolute;
+        top: 22px;
+        left: 12px;
+        font-size: 12px;
+        color: #181818;
+        transition: all 0.3s ease-out;
+    }
+
+    .btn__arrow {
+        margin-top: 16px;
     }
 
     .box__footer .waves__responsive {
+        position: fixed;
         margin-top: -20px;
-        position: fixed;
-    }
-}
-
-@media screen and (height: 844px) {
-    .container {
-        width: 80%;
-        height: 600px;
-        padding: 20px;
-        margin: -120px auto 0px;
-    }
-
-    .box__footer .waves__responsive {
-        position: fixed;
-        margin-top: -80px;
-    }
-}
-
-@media screen and (height: 740px) {
-    .container {
-        width: 80%;
-        height: auto;
-        padding: 20px;
-        margin: -40px auto 80px;
-    }
-
-    .box__footer .waves__responsive {
-        position: fixed;
-        margin-top: -80px;
     }
 }
 </style>

@@ -49,19 +49,21 @@
                         </label>
                     </div>
                     <div class="box mx-auto mt-3" :class="{ 'has-value': email !== '' }">
-                        <input type="email" class="form-control" v-model="email">
+                        <input type="email" class="form-control" v-model="email" @input="validateEmail">
                         <label for="exampleFormControlInput1" class="form-label">
                             <v-icon name="md-alternateemail" scale="1" />
                             Email
                         </label>
                     </div>
+                    <p class="text-validation" v-if="emailError">{{ emailError }}</p>
                     <div class="box mx-auto mt-3" :class="{ 'has-value': password !== '' }">
-                        <input type="password" class="form-control" v-model="password">
+                        <input type="password" class="form-control" v-model="password" @input="validatePassword">
                         <label for="exampleFormControlInput1" class="form-label">
                             <v-icon name="ai-closed-access" scale="1.5" />
                             Contraseña
                         </label>
                     </div>
+                    <p class="text-validation" v-if="passwordError">{{ passwordError }}</p>
                     <button class="btn btn-outline-success mt-4" @click="onClick" :disabled="isLoadingRef">
                         <span v-show="!isLoadingRef">SIGN UP</span>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
@@ -69,7 +71,7 @@
                         <span v-show="isLoadingRef">SIGN UP...</span>
                     </button>
                     <p style="color: #46B346; text-align: center;">{{ textActivate }}</p>
-                    <router-link :to="{ name: 'login' }" type="button" class="btn__arrow">
+                    <router-link :to="{ name: 'primacy-admin' }" type="button" class="btn__arrow">
                         <v-icon class="icon__arrow" name="bi-arrow-bar-left" color="#080" />
                         <span class="span_text">Atras</span>
                     </router-link>
@@ -112,10 +114,27 @@ import Swal from 'sweetalert2';
 const name = ref('');
 const lastname = ref('');
 const email = ref('');
+const emailError = ref('');
 const password = ref('');
+const passwordError = ref('');
 const textActivate = ref('');
-
 const isLoadingRef = ref(false);
+
+const validateEmail = () => {
+    if (!username.value.includes('@')) {
+        emailError.value = 'Debe ingresar un email válido';
+    } else {
+        emailError.value = '';
+    }
+};
+
+const validatePassword = () => {
+    if (password.value.length < 6) {
+        passwordError.value = 'La contraseña debe tener al menos 6 caracteres';
+    } else {
+        passwordError.value = '';
+    }
+};
 
 const onClick = async (e) => {
     e.preventDefault();
@@ -128,85 +147,7 @@ const onClick = async (e) => {
         return;
     }
     isLoadingRef.value = true;
-    try {
-        const token = await executeRecaptcha('REGISTER'); // Obtener el token de reCAPTCHA
-        console.log('reCAPTCHA token:', token); // Depuración: Imprimir el token de reCAPTCHA
-        await registerUser(token);
-    } catch (error) {
-        console.error('reCAPTCHA error:', error);
-        isLoadingRef.value = false;
-        Swal.fire({
-            icon: 'error',
-            title: 'Error de reCAPTCHA',
-            text: 'Por favor, reintenta la verificación.'
-        });
-    }
-};
-
-const registerUser = async (recaptcha) => {
-    isLoadingRef.value = true;
-    try {
-        const newUser = await userService.userCreate({
-            lastname: lastname.value,
-            email: email.value,
-            names: name.value,
-            password: password.value,
-            recaptcha
-        });
-        console.log(newUser)
-        if (newUser.status === 422 || newUser.status === 403) {
-            Swal.fire({
-                icon: "error",
-                title: "Error",
-                text: "Por favor revisa los datos ingresados e intenta nuevamente"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    console.log('redirigiendo a signup');
-                    router.push({ name: 'signup' });
-                }
-            });
-        } else if (newUser.status === 500) {
-            Swal.fire({
-                icon: "error",
-                title: "El servicio no se encuentra disponible por el momento",
-                text: "Por favor reintente en unos minutos"
-            });
-        } else if (newUser) {
-            console.log(newUser.user_id)
-            Swal.fire({
-                title: "Usuario registrado",
-                text: "Revisa tu corre para activar tu usuario y poder acceder a la aplicacion. Tiene 24 horas para activar su cuenta.",
-                icon: "info",
-                showCancelButton: false,
-                confirmButtonColor: "#3085d6",
-                confirmButtonText: "Ok",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    router.push({ name: 'activate', params: { id: newUser.user_id } });
-                    // router.push({ name: 'login' });
-                }
-            });
-        }
-    } catch (error) {
-        if (error.response && error.response.status === 500) {
-            Swal.fire({
-                icon: "error",
-                title: "El servicio no se encuentra disponible por el momento",
-                text: "Por favor reintente en unos minutos"
-            });
-        } else if (error.message === 'Failed to fetch') {
-            Swal.fire({
-                icon: "error",
-                title: "Error de red.",
-                text: "El servicio no se encuentra disponible por el momento. Por favor reintente en unos minutos"
-            });
-        } else {
-            authError.value = "login error";
-            console.error("Error durante el login:", error);
-        }
-    } finally {
-        isLoadingRef.value = false;
-    }
+    router.push({ name: 'primacy-admin' });
 };
 </script>
 

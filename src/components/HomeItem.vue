@@ -25,12 +25,11 @@
                     <img src="../assets/paintStainBlue.jpg" alt="">
                     <div class="box-btn">
                         <a href="https://www.linkedin.com/in/gabriela-marisol-rodriguez-dos-santos-5b9196270/"
-                            target="_blank" class="btn-icon"><v-icon name="co-linkedin-in" scale="2" color="#fff"
-                                class="icon" /></a>
+                            target="_blank" class="btn-icon"><v-icon name="co-linkedin-in" scale="2" class="icon" /></a>
                         <a href="https://github.com/Gaby-1628?tab=repositories" target="_blank" class="btn-icon"><v-icon
-                                name="co-github" scale="2" color="#fff" class="icon" /></a>
+                                name="co-github" scale="2" class="icon" /></a>
                         <a href="https://api.whatsapp.com/send?phone=542975047240" target="_blank"
-                            class="btn-icon"><v-icon name="co-whatsapp" scale="2" color="#fff" class="icon" /></a>
+                            class="btn-icon"><v-icon name="co-whatsapp" scale="2" class="icon" /></a>
                     </div>
                 </div>
             </div>
