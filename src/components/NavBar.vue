@@ -45,12 +45,6 @@
                             <div class="item">
                                 <a href="https://api.whatsapp.com/send?phone=542975047240" target="_blank"
                                     class="btn-icon">
-                                    <v-icon name="co-discord" scale="1.5" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="https://api.whatsapp.com/send?phone=542975047240" target="_blank"
-                                    class="btn-icon">
                                     <v-icon name="co-whatsapp" scale="1.5" />
                                 </a>
                             </div>

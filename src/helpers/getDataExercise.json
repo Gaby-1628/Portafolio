@@ -1,0 +1,272 @@
+[
+        {
+                "type": "title",
+                "content": ["EJERCICIOS"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "La práctica de actividad física se mide en función de sus dimensiones: tipo, duración, frecuencia, intensidad y dominio."
+                ]
+        },
+        {
+                "type": "title",
+                "content": ["Dimensiones"]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Tipo:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Es la forma de participación en una actividad física: aeróbica, de fortalecimiento, de flexibilidad y de equilibrio."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Actividades aeróbicas: Incluyen cualquier actividad que pueda ser realizada a expensas del metabolismo oxidativo, el cual utiliza el oxígeno como fuente principal para producir energía.Incluyen actividades como caminar, andar en bicicleta, practicar deportes o bailar entre otras.Para lograr una mejora de esta dimensión se debe realizar a una intensidad y duración adecuada.",
+                        "Actividades de fortalecimiento muscular: son aquellas que mantienen o mejoran la fuerza muscular.Incluyen comportamientos cotidianos como cargar peso, levantar niños o subir escaleras, así como el uso de equipamiento específico como máquinas de pesas, pesas libres o bandas elásticas entre otros.",
+                        "Actividades de flexibilidad: mejoran el rango de movimiento alrededor de una articulación.Incluyen stretching dinámico y pasivo, yoga, tai chi, entre otras.",
+                        "Actividades de propiocepción y equilibrio: Son movimientos que trabajan sobre el control postural.Cuando se practican regularmente, mejoran la habilidad para resistir desequilibrios que pueden causar caídas mientras se camina, se está parado o sentado.Estar en equilibrio en un pie o caminar sobre una línea delgada dibujada en el piso son algunos ejemplos de estas actividades.",
+                        "Actividades multicomponente: Se refiere a intervenciones de actividad física que incluye más de un tipo de actividad física, por ejemplo: el entrenamiento aeróbico, de fortalecimiento muscular y de equilibrio."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Duración:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Tiempo durante el cual se deberá realizar la actividad física. Suele estar expresado en minutos."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Frecuencia:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Número de veces que se realiza una actividad física. Suele estar expresado en sesiones, episodios, o veces por semana."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Intensidad:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Ritmo y nivel de esfuerzo que conlleva la actividad, o magnitud del esfuerzo necesario para realizar una actividad física. La intensidad puede expresarse en términos absolutos relativos."
+                ]
+        },
+        {
+                "type": "title",
+                "content": ["Consejos para sumar minutos de ejercicio"]
+        },
+        {
+                "type": "subtitle",
+                "content": ["En el trabajo/ estudio/hogar:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Si el trabajo o estudio exige que se permanezca mucho tiempo sentado y/o en posiciones sostenidas, se presenta un desafío: Reducir el comportamiento  sedentario prolongado y aumentar la práctica de la actividad física de acuerdo a las recomendaciones internacionales:"
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Incluir al menos 30 min de actividad física aeróbica de intensidad moderada- elevada todos los días, sea en el trabajo/ estudio/hogar,  en los desplazamientos o durante el tiempo libre.",
+                        "Reducir el comportamiento sedentario a partir de interrupciones cortas cada vez que se pueda con pausas activas de 3 a 5 minutos,  cada 30- 45 min que se permanece en comportamiento sedentario."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Si el trabajo o estudio exige una actividad física de intensidad moderada o elevada( caminatas continuas, levantar peso, trabajo de construcción) se sugiere hacer ejercicios de estiramiento y de fortalecimiento muscular durante al menos 10 min consecutivos."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "En el hogar la tarea de limpieza, jardinería y mantenimiento ayudan a sumar minutos de actividad física."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Desplazamiento:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Se recomienda utilizar el transporte activo siempre que sea posible(caminar, andar en bicicleta, especialmente en los viajes cortos)."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Si el viaje es largo se puede aprovechar el último tramo en transporte activo."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Tambien es aconsejable utilizar escaleras en lugar de ascensores como estrategia para sumar minutos de actividad fisica de mayor intensidad."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Tiempo Libre:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "El tiempo libre es una excelente oportunidad para ser más físicamente activo. Por ej. Practicar un deporte, bailar, realizar actividades programadas, hacer actividad al aire libre, pasear, visitar lugares a pie, jugar en la plaza en familia. Además, es el dominio ideal para incluir un programa de ejercicio físico."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Ser insuficientemente activo no es lo mismo que ser sedentario. Ser insuficientemente activo implica no alcanzar las recomendaciones mundiales de actividad física y salud, mientras que ser sedentario consiste en pasar muchas horas en comportamientos sedentarios. Ambos son factores de riesgo que se traducen en deterioro sustanciales en salud."
+                ]
+        },
+        {
+                "type": "title",
+                "content": ["GRÁFICO DE RECOMENDACIONES"]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Programa de ejercicio físico:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "El ejercicio físico es una subcategoría de la actividad física que se realiza de manera planificada, estructurada y repetitiva, diseñada para mantener uno o más componentes de la aptitud física."
+                ]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "En este sentido un programa de ejercicio  físico debería considerar todos los componentes de la aptitud física relacionada con la salud, tanto para la promoción de la salud como parte tambien del tratamiento de enfermedades no transmisibles."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Recomendaciones para personas adultas(18-64 años)"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "A lo largo de la semana acumular mínimo de entre 150- 300 min de actividad física aeróbica de intensidad moderada, o bien un mínimo de entre 75-150 min de actividad física vigorosa, o bien una combinación equivalente de actividad de intensidad moderada y vigorosa.",
+                        "Realizar actividad física con regularidad.",
+                        "Realizar actividades de fortalecimiento muscular de intensidad moderada o elevada 2 ó más días a la semana.",
+                        "Limitar el tiempo que dedican a las actividades sedentarias.",
+                        "Con el fin de reducir los efectos perjudiciales para la salud de un nivel alto de sedentarismo, procurar realizar más actividad física de intensidad moderada a vigorosa de la recomendada."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Recomendaciones para personas adultas mayores(65 y más)"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "A las pautas anteriores se le agrega la recomendación de incluir, al menos 3 ó más días de la semana, actividades físicas multicompetente variadas que den prioridad al equilibrio  funcional y entrenamiento de fuerza de intensidad moderada o elevada, para mejorar su capacidad funcional y evitar caídas."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Organización de la sección de ejercicio:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Entrada en calor(5 a 10 min): Permite al cuerpo adaptarse a los cambios fisiológicos que se darán en la fase de acondicionamiento. Se recomienda incluir actividades de movilidad articular como resistencia aeróbica y muscular a intensidad leve a moderada. La entrada en calor también mejora el rango de movimiento y puede reducir el riesgo de lesión.",
+                        "Fase de acondicionamiento(20 -60 min): Está orientada a mantener o mejorar una o varias dimensiones de la aptitud física, es decir, puede incluir ejercicios aeróbicos, de resistencia muscular, flexibilidad y/ o neuromotores.",
+                        "Vuelta a la calma(5-10 min): Se busca una recuperación gradual de los parámetros hasta alcanzar los valores cercanos a los de reposo."
+                ]
+        },
+        {
+                "type": "image",
+                "content": [
+                        "https://res.cloudinary.com/willi2500/image/upload/v1728398576/primacy/ejercicio_syfcvc.jpg"
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Prescripción de ejercicio para promoción de la salud en personas adultas sanas:"]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Recomendaciones sobre ejercicio aeróbico(para mejorar la aptitud cardiovascular):"]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Tipo:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Se recomienda un ejercicio regular, de naturaleza rítmica, que sea continuo y que involucre a los grandes grupos musculares(ej: caminar, pasear en bicicleta, correr, nadar, bailar, patinar, etc)."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Frecuencia, duración e intensidad:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Se recomienda realizar una sesión de ejercicio de 30 min diarios de intensidad moderada, al menos 5 veces a la semana.",
+                        "25 min de actividad física de intensidad elevada al menos 3 días a la semana.",
+                        "Una combinación equivalente en duración, frecuencia e intensidad."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Progresion:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Debe ser gradual, ajustando la duración, frecuencia y/ o intensidad del ejercicio.",
+                        "Este enfoque puede mejorar la adherencia y reducir los riesgos de lesiones musculoesqueléticas."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Cuidados al iniciar un programa de ejercicio:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Hidratación adecuada antes, durante y después del ejercicio.",
+                        "Entrar en calor al comienzo de la sesión y elongación al finalizar.",
+                        "Calzado y medias adecuadas para prevenir lesiones en los pies.",
+                        "Usar ropa cómoda que permita la termorregulación.",
+                        "Mantener un horario de práctica regular, creando un hábito.",
+                        "Evitar las horas de máxima temperatura."
+                ]
+        },
+        {
+                "type": "subtitle",
+                "content": ["Consideraciones especiales para personas con enfermedades crónicas:"]
+        },
+        {
+                "type": "paragraph",
+                "content": [
+                        "Para entrenar la aptitud cardiovascular en pacientes con HTA, EPOC o DBT se recomienda que se mantenga una intensidad moderada de ejercicio.",
+                        "En los pacientes con sobrepeso y obesidad se puede trabajar a intensidad elevada evitando el alto impacto, es decir evitando saltos o fases de vuelo de ambos pies.",
+                        "Respecto de los ejercicios de fuerza en pacientes con sobrepeso y obesidad, se debe tener especial atención con los ejercicios a cuerpo libre ya que la carga en estos casos es el propio peso corporal.",
+                        "En pacientes con DBT es fundamental revisar los pies antes y después de la sesión de ejercicio e interrumpir la actividad física de pie en el caso de tener lesiones.",
+                        "Se debe evitar las actividades de alto impacto en las que exista una fase de vuelo donde los dos pies estén en el aire, ya que puede influir de manera negativa en lesiones de pie en pacientes con DBT.",
+                        "Las personas con HTA deben controlar la respuesta de la presión arterial durante el ejercicio a los ajustes en la medicación.",
+                        "Las persianas con EPOC deben controlar su índice de disnea durante la sesión de ejercicio aeróbico para monitorear mejor la intensidad del ejercicio.",
+                        "Hidratación adecuada antes, durante y después del ejercicio."
+                ]
+        }
+]

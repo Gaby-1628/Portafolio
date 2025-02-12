@@ -136,7 +136,7 @@ const onClick = () => {
         });
         return;
     }
-    router.push({ name: 'home-crm' });
+    router.push({ name: 'home-user-primacy' });
 };
 
 const installApp = () => {
@@ -148,7 +148,7 @@ const showModal = () => {
 };
 
 const signup = async () => {
-    await router.push({ name: 'signup' });
+    await router.push({ name: 'signup-user' });
 }
 
 onMounted(async () => {

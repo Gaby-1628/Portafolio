@@ -47,8 +47,7 @@
                     <img src="../assets/poryects/primacy-adminHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button @click="redirect" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
-                            scale="1.2" /></button>
+                    <button @click="redirectCRM" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
                 </div>
             </div>
             <div class="box-proyect">
@@ -56,8 +55,7 @@
                     <img src="../assets/poryects/primacy-userHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/primacy-user" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
-                            scale="1.2" /></router-link>
+                    <button @click="redirectUser" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
                 </div>
             </div>
         </div>
@@ -68,7 +66,7 @@
 import Swal from 'sweetalert2';
 import router from '../router';
 
-const redirect = () => {
+const redirectCRM = () => {
     Swal.fire({
         title: "Primacy CRM",
         text: "A continuación será redirigido a una maqueta interactiva de la App de Primacy CRM",
@@ -97,6 +95,34 @@ const redirect = () => {
     });
 };
 
+const redirectUser = () => {
+    Swal.fire({
+        title: "Primacy User",
+        text: "A continuación será redirigido a una maqueta interactiva de la App de usuario de Primacy",
+        icon: "info",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        // allowOutsideClick: false,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            router.push({ name: 'primacy-user' });
+        }
+    });
+};
 
 </script>
 
@@ -144,6 +170,7 @@ a {
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    margin-bottom: 100px;
 }
 
 .content-img img {
@@ -211,6 +238,7 @@ a {
         max-width: 1200px;
         margin: auto;
         padding: 20px;
+        margin-bottom: 100px;
     }
 }
 
@@ -239,6 +267,7 @@ a {
         max-width: 1200px;
         margin: auto;
         padding: 40px;
+        margin-bottom: 100px;
     }
 }
 
@@ -263,6 +292,7 @@ a {
         max-width: 1200px;
         margin: auto;
         padding: 20px;
+        margin-bottom: 50px;
     }
 }
 </style>
