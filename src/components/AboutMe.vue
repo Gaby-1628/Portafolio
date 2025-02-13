@@ -9,25 +9,16 @@
                 </div>
                 <div class="box-text">
                     <p class="paragraph">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere cum dolor enim, molestias culpa
-                        a?
-                        Aliquid ab laboriosam quia ex totam! Molestiae nihil doloribus quos, obcaecati nostrum
-                        blanditiis
-                        ratione delectus.
+                        Soy una desarrolladora frontend apasionada por la creación de experiencias digitales innovadoras y funcionales. Mi enfoque combina diseño y tecnología para construir interfaces intuitivas y atractivas.
                     </p>
                     <p class="paragraph">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere cum dolor enim, molestias culpa
-                        a?
-                        Aliquid ab laboriosam quia ex totam! Molestiae nihil doloribus quos, obcaecati nostrum
-                        blanditiis
-                        ratione delectus.
+                        Cuento con una certificación en Programación Web Full Stack avalada por la Universidad del Salvador y una formación en Project Management tras ser becada por Google. Esto me ha permitido desarrollar habilidades en organización, gestión de proyectos y metodologías ágiles de trabajo en equipo.
                     </p>
                     <p class="paragraph">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere cum dolor enim, molestias culpa
-                        a?
-                        Aliquid ab laboriosam quia ex totam! Molestiae nihil doloribus quos, obcaecati nostrum
-                        blanditiis
-                        ratione delectus.
+                        Además, he explorado el mundo del diseño y la programación de videojuegos, un área que me motiva a seguir aprendiendo y expandiendo mis conocimientos. Actualmente, trabajo como programadora autónoma, diseñando y desarrollando sitios web adaptados a las necesidades de cada cliente.
+                    </p>
+                    <p class="paragraph">
+                        Siempre en búsqueda de nuevos desafíos, mi objetivo es seguir creciendo profesionalmente, aprender de otros expertos en el sector y aportar valor a proyectos innovadores.
                     </p>
                 </div>
             </div>
@@ -156,10 +147,10 @@ const technoResponsive = ref([
 
 .box-text {
     width: 70%;
-    text-align: center;
+    text-align: justify;
     color: #fff;
-    margin-top: -20px;
-    margin-left: 50px;
+    margin-top: -40px;
+    margin-left: 100px;
 }
 
 .paragraph {
@@ -177,7 +168,7 @@ const technoResponsive = ref([
 
 .slaide-container_logo_invert {
     transform: rotate(5deg);
-    margin-top: 70px;
+    margin-top: 80px;
     margin-bottom: 50px;
 }
 
