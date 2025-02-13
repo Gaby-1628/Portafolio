@@ -12,10 +12,12 @@
                     <h2 style="color: #1BE5DD;">Desarrolladora</h2>
                     <h2>Frontend</h2>
                     <div class="content-btn">
-                        <button type="button" class="btn btn-outline-info" @click="downloadCV"><span
-                                class="text-span">Descargar CV</span> <v-icon name="ri-file-list-3-line" /></button>
-                        <button type="button" class="btn btn-outline-danger mx-4" @click="downpage"><span
-                                class="text-span">Comenzar</span> <v-icon name="px-arrow-down" /></button>
+                        <button type="button" class="btn btn-outline-info" @click="downloadCV">
+                            <span class="text-span">Descargar CV</span> <v-icon name="ri-file-list-3-line" />
+                        </button>
+                        <button type="button" class="btn btn-outline-danger mx-4" @click="downpage">
+                            <span class="text-span">Comenzar</span> <v-icon name="px-arrow-down" />
+                        </button>
                     </div>
                 </div>
                 <div class="icon-content">
@@ -40,12 +42,24 @@
 <script setup>
 
 const downloadCV = () => {
-    const link = document.createElement("a");
-    link.href = "/CV.pdf";
-    link.download = "Gabriela_Rodriguez_CV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const cvUrl = `${window.location.origin}/CV.pdf`;
+
+    fetch(cvUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Gabriela_Rodriguez_CV.pdf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => {
+            console.error("Error al descargar el CV:", error);
+            alert("Hubo un problema al descargar el CV. Inténtalo de nuevo.");
+        });
 };
 
 const downpage = () => {
@@ -54,6 +68,7 @@ const downpage = () => {
         aboutSection.scrollIntoView({ behavior: "smooth" });
     }
 };
+
 </script>
 
 <style scoped>
