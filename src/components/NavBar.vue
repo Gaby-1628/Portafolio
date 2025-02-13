@@ -162,7 +162,7 @@ const displacePortafolioAndClose = () => {
     transition: all .5s;
 }
 
-.item a:hover{
+.item a:hover {
     color: #fff;
 }
 
@@ -189,9 +189,18 @@ const displacePortafolioAndClose = () => {
     align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+/* ------------------------------------------------------------ */
+/* ------------------------ RESPONSIVE ------------------------ */
+/* ------------------------------------------------------------ */
+
+@media screen and (max-width: 800px) {
     .side-bar {
         width: 250px;
+    }
+
+    .item a {
+        margin-left: -170px;
+        transition: all .5s;
     }
 }
 </style>

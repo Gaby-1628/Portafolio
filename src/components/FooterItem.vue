@@ -65,6 +65,40 @@
 /* ------------------------ RESPONSIVE ------------------------ */
 /* ------------------------------------------------------------ */
 
+@media screen and (max-width: 1300px) {
+    .footer {
+        display: flex;
+    }
+
+    .content-logo img {
+        width: 50px;
+        border-radius: 28px;
+        margin: 30px;
+    }
+
+    .content-logo span {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    .contact {
+        margin-top: 40px;
+    }
+
+    .contact span {
+        margin-left: 50px;
+        font-size: 12px;
+    }
+
+    .copy {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-bottom: 20px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .footer {
         display: grid;

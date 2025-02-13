@@ -3,14 +3,17 @@
         <div class="container">
             <div class="box-user">
                 <div class="paintStainRed">
-                    <div class="img-user">
+                    <div class="img-user" :class="{ 'show-image': showImage }">
                         <img src="../assets/user.png" alt="">
                     </div>
                 </div>
-                <div class="box-text">
-                    <h1>Hola, soy <span style="color: #E51B23;">Gabriela</span></h1>
-                    <h2 style="color: #1BE5DD;">Desarrolladora</h2>
-                    <h2>Frontend</h2>
+                <div class="box-text" :class="{ 'show-text': showText }">
+                    <h1>
+                        <span>{{ typedHello }}</span>
+                        <span style="color: #E51B23;">{{ typedName }}</span>
+                    </h1>
+                    <h2 style="color: #1BE5DD;">{{ typedDevelopment }}</h2>
+                    <h2>{{ typedFront }}</h2>
                     <div class="content-btn">
                         <button type="button" class="btn btn-outline-info" @click="downloadCV">
                             <span class="text-span">Descargar CV</span> <v-icon name="ri-file-list-3-line" />
@@ -21,10 +24,10 @@
                     </div>
                 </div>
                 <div class="icon-content">
-                    <img src="../assets/logo_android_invert.jpg" alt="">
+                    <img src="../assets/logo_android_invert.jpg" alt="" />
                 </div>
                 <div class="paintStainBlue">
-                    <img src="../assets/paintStainBlue.jpg" alt="">
+                    <img src="../assets/paintStainBlue.jpg" alt="" />
                     <div class="box-btn">
                         <a href="https://www.linkedin.com/in/gabriela-marisol-rodriguez-dos-santos-5b9196270/"
                             target="_blank" class="btn-icon"><v-icon name="co-linkedin-in" scale="2" class="icon" /></a>
@@ -40,6 +43,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
 
 const downloadCV = () => {
     const cvUrl = `${window.location.origin}/CV.pdf`;
@@ -69,6 +73,50 @@ const downpage = () => {
     }
 };
 
+const showImage = ref(false);
+const showText = ref(false);
+const typedHello = ref("");
+const typedName = ref("");
+const typedDevelopment = ref("");
+const typedFront = ref("");
+
+const hello = "Hola, soy ";
+const name = "Gabriela";
+const development = "Desarrolladora";
+const front = "Frontend";
+const typingSpeed = 70;
+
+const typeEffect = async () => {
+    await typeText(typedHello, hello);
+    await typeText(typedName, name);
+    await typeText(typedDevelopment, development);
+    await typeText(typedFront, front);
+};
+
+const typeText = (refVar, text) => {
+    return new Promise((resolve) => {
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                refVar.value += text[i];
+                i++;
+            } else {
+                clearInterval(interval);
+                resolve();
+            }
+        }, typingSpeed);
+    });
+};
+
+onMounted(() => {
+    setTimeout(() => {
+        showImage.value = true;
+        setTimeout(() => {
+            showText.value = true;
+            typeEffect();
+        }, 1000);
+    }, 500);
+});
 </script>
 
 <style scoped>
@@ -107,6 +155,9 @@ a {
 .img-user img {
     width: 700px;
     margin-top: 90px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .icon-content {
@@ -127,6 +178,19 @@ a {
     margin-left: 250px;
     letter-spacing: 5px;
     z-index: 10;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.show-image img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.show-text {
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .box-text h1,
@@ -162,6 +226,16 @@ a {
 /* ------------------------------------------------------------ */
 
 @media screen and (max-width: 1300px) {
+    .icon-content {
+        margin-left: 350px;
+        margin-top: 20px;
+    }
+
+    .icon-content img {
+        border-radius: 8px;
+        width: 150px;
+    }
+
     .box-text {
         position: absolute;
         width: 100%;
@@ -171,6 +245,21 @@ a {
         margin-left: 350px;
         letter-spacing: 5px;
         z-index: 10;
+    }
+
+    .paintStainBlue img {
+        width: 400px;
+        transform: translateY(400%);
+        margin-left: -450px;
+    }
+
+    .box-btn {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateY(1200%);
+        margin-left: -350px;
     }
 }
 

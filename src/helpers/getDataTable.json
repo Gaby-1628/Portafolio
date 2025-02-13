@@ -1,0 +1,101 @@
+[
+    {
+        "User": "Mark",
+        "Profile": "admin",
+        "Network": "---",
+        "IpLocal": "12.05.02",
+        "IpRemota": "12.05.02",
+        "txBytes": "8484",
+        "rxBytes": "8484",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Otto",
+        "Profile": "user",
+        "Network": "---",
+        "IpLocal": "13.00,08",
+        "IpRemota": "13.00,08",
+        "txBytes": "8484",
+        "rxBytes": "---",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Jacob",
+        "Profile": "admin",
+        "Network": "Mikrotik",
+        "IpLocal": "10.12.06",
+        "IpRemota": "10.12.06",
+        "txBytes": "8484",
+        "rxBytes": "8282",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Larry",
+        "Profile": "user",
+        "Network": "---",
+        "IpLocal": "11.16.08",
+        "IpRemota": "11.16.08",
+        "txBytes": "8484",
+        "rxBytes": "8080",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Jacob",
+        "Profile": "admin",
+        "Network": "Mikrotik",
+        "IpLocal": "10.12.06",
+        "IpRemota": "10.12.06",
+        "txBytes": "8484",
+        "rxBytes": "8282",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Mark",
+        "Profile": "admin",
+        "Network": "---",
+        "IpLocal": "12.05.02",
+        "IpRemota": "12.05.02",
+        "txBytes": "8484",
+        "rxBytes": "8484",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Otto",
+        "Profile": "user",
+        "Network": "---",
+        "IpLocal": "13.00,08",
+        "IpRemota": "13.00,08",
+        "txBytes": "8484",
+        "rxBytes": "---",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Jacob",
+        "Profile": "admin",
+        "Network": "Mikrotik",
+        "IpLocal": "10.12.06",
+        "IpRemota": "10.12.06",
+        "txBytes": "8484",
+        "rxBytes": "8282",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    },
+    {
+        "User": "Larry",
+        "Profile": "user",
+        "Network": "---",
+        "IpLocal": "11.16.08",
+        "IpRemota": "11.16.08",
+        "txBytes": "8484",
+        "rxBytes": "8080",
+        "Status": "Activo",
+        "lastDisconnect": "---"
+    }
+]

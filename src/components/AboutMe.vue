@@ -1,50 +1,71 @@
 <template>
     <div id="about" class="about">
-        <div class="conainer-about">
-            <div class="about-me">
-                <div class="title">
-                    <div class="border-top"></div>
-                    <h1>SOBRE MI:</h1>
-                    <div class="border-bottom"></div>
+        <div class="container-about-skins_responsive">
+            <div class="conainer-about">
+                <div class="about-me">
+                    <div class="title">
+                        <div class="border-top"></div>
+                        <h1>SOBRE MI:</h1>
+                        <div class="border-bottom"></div>
+                    </div>
+                    <div class="box-text">
+                        <p class="paragraph">
+                            Soy una desarrolladora frontend apasionada por la creación de experiencias digitales
+                            innovadoras
+                            y funcionales. Mi enfoque combina diseño y tecnología para construir interfaces intuitivas y
+                            atractivas.
+                        </p>
+                        <p class="paragraph">
+                            Cuento con una certificación en Programación Web Full Stack avalada por la Universidad del
+                            Salvador y una formación en Project Management tras ser becada por Google. Esto me ha
+                            permitido
+                            desarrollar habilidades en organización, gestión de proyectos y metodologías ágiles de
+                            trabajo
+                            en equipo.
+                        </p>
+                        <p class="paragraph">
+                            Además, he explorado el mundo del diseño y la programación de videojuegos, un área que me
+                            motiva
+                            a seguir aprendiendo y expandiendo mis conocimientos. Actualmente, trabajo como programadora
+                            autónoma, diseñando y desarrollando sitios web adaptados a las necesidades de cada cliente.
+                        </p>
+                        <p class="paragraph">
+                            Siempre en búsqueda de nuevos desafíos, mi objetivo es seguir creciendo profesionalmente,
+                            aprender de otros expertos en el sector y aportar valor a proyectos innovadores.
+                        </p>
+                    </div>
                 </div>
-                <div class="box-text">
-                    <p class="paragraph">
-                        Soy una desarrolladora frontend apasionada por la creación de experiencias digitales innovadoras y funcionales. Mi enfoque combina diseño y tecnología para construir interfaces intuitivas y atractivas.
-                    </p>
-                    <p class="paragraph">
-                        Cuento con una certificación en Programación Web Full Stack avalada por la Universidad del Salvador y una formación en Project Management tras ser becada por Google. Esto me ha permitido desarrollar habilidades en organización, gestión de proyectos y metodologías ágiles de trabajo en equipo.
-                    </p>
-                    <p class="paragraph">
-                        Además, he explorado el mundo del diseño y la programación de videojuegos, un área que me motiva a seguir aprendiendo y expandiendo mis conocimientos. Actualmente, trabajo como programadora autónoma, diseñando y desarrollando sitios web adaptados a las necesidades de cada cliente.
-                    </p>
-                    <p class="paragraph">
-                        Siempre en búsqueda de nuevos desafíos, mi objetivo es seguir creciendo profesionalmente, aprender de otros expertos en el sector y aportar valor a proyectos innovadores.
-                    </p>
+                <div class="box-skins">
+                    <span v-for="tech in technologies" :key="tech.name" class="tech-item"
+                        :style="{ color: tech.color, marginTop: tech.marginTop + 'px', marginLeft: tech.marginLeft + 'px' }">
+                        {{ tech.name }} <v-icon :name="tech.icon" />
+                    </span>
                 </div>
             </div>
-            <div class="box-skins">
-                <span v-for="tech in technologies" :key="tech.name" class="tech-item"
-                    :style="{ color: tech.color, marginTop: tech.marginTop + 'px', marginLeft: tech.marginLeft + 'px' }">
-                    {{ tech.name }} <v-icon :name="tech.icon" />
+            <div class="box-skins_responsive">
+                <span v-for="techno in technoResponsive" :key="techno.name" class="tech-item_responsive"
+                    :style="{ color: techno.color }">
+                    {{ techno.name }} <v-icon :name="techno.icon" class="icon-responsive" />
                 </span>
             </div>
         </div>
-        <div class="box-skins_responsive">
-            <span v-for="techno in technoResponsive" :key="techno.name" class="tech-item_responsive"
-                :style="{ color: techno.color }">
-                {{ techno.name }} <v-icon :name="techno.icon" class="icon-responsive" />
-            </span>
-        </div>
         <div class="slaide-container_logo_invert">
             <div class="slaide-track_logo_invert">
-                <div class="slaide" v-for="n in 30" :key="n">
+                <div class="slaide" v-for="n in 30" :key="'invert-' + n">
+                    <img src="/public/img/icon/logo_android_invert.jpg" alt="">
+                </div>
+                <div class="slaide" v-for="n in 30" :key="'invert-copy-' + n">
                     <img src="/public/img/icon/logo_android_invert.jpg" alt="">
                 </div>
             </div>
         </div>
+
         <div class="slaide-container_logo">
             <div class="slaide-track_logo">
-                <div class="slaide" v-for="n in 30" :key="n">
+                <div class="slaide" v-for="n in 30" :key="'logo-' + n">
+                    <img src="/public/img/icon/logo_android.jpg" alt="">
+                </div>
+                <div class="slaide" v-for="n in 30" :key="'logo-copy-' + n">
                     <img src="/public/img/icon/logo_android.jpg" alt="">
                 </div>
             </div>
@@ -102,6 +123,7 @@ const technoResponsive = ref([
     { name: "Tailwind", icon: "si-tailwindcss", color: "#1BE5DD" },
     { name: "npn", icon: "co-npm", color: "#E51B23" }
 ]);
+
 </script>
 
 <style scoped>
@@ -181,8 +203,16 @@ const technoResponsive = ref([
 .slaide-track_logo_invert,
 .slaide-track_logo {
     display: flex;
-    width: max-content;
+    width: 200%;
     animation: scroll 20s linear infinite;
+}
+
+.slaide-track_logo_invert {
+    animation: scroll 20s linear infinite;
+}
+
+.slaide-track_logo {
+    animation: scroll 20s linear infinite reverse;
 }
 
 .slaide {
@@ -201,7 +231,7 @@ const technoResponsive = ref([
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
@@ -244,17 +274,60 @@ const technoResponsive = ref([
 /* ------------------------------------------------------------ */
 
 @media screen and (max-width: 1300px) {
+    .container-about-skins_responsive {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 55% 40%;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .box-text {
+        width: 100%;
+        text-align: left;
+        margin-left: 100px;
+        margin-bottom: 50px;
+    }
+
     .box-skins {
-        width: 40%;
-        display: flex;
+        display: none;
+    }
+
+    .box-skins_responsive {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 10px;
         justify-content: center;
-        margin-top: -100px;
-        transform: translateX(-50%);
-        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+
+    .tech-item_responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 8px 10px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .tech-item_responsive .icon-responsive {
+        margin-left: 15px;
+        scale: 2.2;
     }
 }
 
 @media screen and (max-width: 1024px) {
+    .container-about-skins_responsive {
+        width: 100%;
+        display: block;
+    }
+
     .about-me {
         width: 100%;
     }
@@ -277,9 +350,11 @@ const technoResponsive = ref([
     }
 
     .box-text {
-        width: 100%;
+        width: 85%;
         text-align: justify;
-        margin-left: 120px;
+        margin-left: 50px;
+        margin-top: 0;
+        margin-bottom: -100px;
     }
 
     .paragraph {
@@ -346,9 +421,11 @@ const technoResponsive = ref([
     }
 
     .box-text {
-        width: 100%;
-        text-align: justify;
-        margin-left: 60px;
+        width: 90%;
+        text-align: center;
+        margin-left: 20px;
+        margin-top: 0;
+        margin-bottom: -100px;
     }
 
     .paragraph {
@@ -394,9 +471,11 @@ const technoResponsive = ref([
 
 @media screen and (max-width: 400px) {
     .box-text {
-        width: 100%;
-        text-align: justify;
-        margin-left: 50px;
+        width: 90%;
+        text-align: center;
+        margin-left: 20px;
+        margin-top: 0;
+        margin-bottom: -100px;
     }
 
     .paragraph {
