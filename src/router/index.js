@@ -18,6 +18,10 @@ import CounselingView from "../views/Primacy/PrimacyUser/CounselingView.vue";
 import CounselingFitnessView from "../views/Primacy/PrimacyUser/CounselingFitnessView.vue";
 import CounselingDietView from "../views/Primacy/PrimacyUser/CounselingDietView.vue";
 import CounselingStressView from "../views/Primacy/PrimacyUser/CounselingStressView.vue";
+import LoginMateView from "../views/MateApp/LoginMateView.vue";
+import HomeMateView from "../views/MateApp/HomeMateView.vue";
+import RegisterView from "../views/MateApp/RegisterView.vue";
+import ResetPasswordView from "../views/MateApp/ResetPasswordView.vue";
 
 const routes = [
     {
@@ -114,6 +118,26 @@ const routes = [
         path: '/counseling-stress',
         name: 'stress',
         component: CounselingStressView
+    },
+    {
+        path: '/mate-app',
+        name: 'mate-app',
+        component: LoginMateView
+    },
+    {
+        path: '/home-mate-app',
+        name: 'home-mate-app',
+        component: HomeMateView
+    },
+    {
+        path: '/register-user-mate',
+        name: 'register',
+        component: RegisterView
+    },
+    {
+        path: '/recovery-password',
+        name: 'recovery',
+        component: ResetPasswordView
     }
 ]
 

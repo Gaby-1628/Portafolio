@@ -29,11 +29,10 @@
                     <img src="../assets/poryects/mateHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <router-link to="/mate-web" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
-                            scale="1.2" /></router-link>
+                    <button @click="redirectMateWeb" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
                 </div>
             </div>
-            <div class="box-proyect">
+            <!-- <div class="box-proyect">
                 <div class="content-img">
                     <img src="../assets/poryects/mav-adminHome.png" alt="">
                 </div>
@@ -41,7 +40,7 @@
                     <router-link to="/mav-admin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
                             scale="1.2" /></router-link>
                 </div>
-            </div>
+            </div> -->
             <div class="box-proyect">
                 <div class="content-img">
                     <img src="../assets/poryects/primacy-adminHome.png" alt="">
@@ -58,6 +57,14 @@
                     <button @click="redirectUser" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
                 </div>
             </div>
+            <div class="box-proyect">
+                <div class="content-img">
+                    <img src="../assets/poryects/mate-app/mate-app.png" alt="">
+                </div>
+                <div class="overlay">
+                    <button @click="redirectMateApp" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -65,6 +72,64 @@
 <script setup>
 import Swal from 'sweetalert2';
 import router from '../router';
+
+const redirectMateApp = () => {
+    Swal.fire({
+        title: "Mate Secure App",
+        text: "A continuación será redirigido a una maqueta interactiva de la App de Mate Secure Connect",
+        icon: "info",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        // allowOutsideClick: false,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            router.push({ name: 'mate-app' });
+        }
+    });
+};
+
+const redirectMateWeb = () => {
+    Swal.fire({
+        title: "Mate Secure Connect",
+        text: "A continuación será redirigido a una maqueta de la pagina de Mate Secure Connect - VPN",
+        icon: "info",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        // allowOutsideClick: false,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            router.push({ name: 'mate-conect' });
+        }
+    });
+};
 
 const redirectCRM = () => {
     Swal.fire({
