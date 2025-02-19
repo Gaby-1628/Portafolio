@@ -29,32 +29,8 @@
                     <img src="../assets/poryects/mateHome.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button @click="redirectMateWeb" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
-                </div>
-            </div>
-            <!-- <div class="box-proyect">
-                <div class="content-img">
-                    <img src="../assets/poryects/mav-adminHome.png" alt="">
-                </div>
-                <div class="overlay">
-                    <router-link to="/mav-admin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
-                            scale="1.2" /></router-link>
-                </div>
-            </div> -->
-            <div class="box-proyect">
-                <div class="content-img">
-                    <img src="../assets/poryects/primacy-adminHome.png" alt="">
-                </div>
-                <div class="overlay">
-                    <button @click="redirectCRM" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
-                </div>
-            </div>
-            <div class="box-proyect">
-                <div class="content-img">
-                    <img src="../assets/poryects/primacy-userHome.png" alt="">
-                </div>
-                <div class="overlay">
-                    <button @click="redirectUser" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
+                    <button @click="redirectMateWeb" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></button>
                 </div>
             </div>
             <div class="box-proyect">
@@ -62,7 +38,34 @@
                     <img src="../assets/poryects/mate-app/mate-app.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button @click="redirectMateApp" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
+                    <button @click="redirectMateApp" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></button>
+                </div>
+            </div>
+            <!-- <div class="box-proyect">
+                <div class="content-img">
+                    <img src="../assets/poryects/mav-adminHome.png" alt="">
+                </div>
+                <div class="overlay">
+                    <button @click="redirectMavAdmin" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right" scale="1.2" /></button>
+                </div>
+            </div> -->
+            <div class="box-proyect">
+                <div class="content-img">
+                    <img src="../assets/poryects/primacy-adminHome.png" alt="">
+                </div>
+                <div class="overlay">
+                    <button @click="redirectCRM" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></button>
+                </div>
+            </div>
+            <div class="box-proyect">
+                <div class="content-img">
+                    <img src="../assets/poryects/primacy-userHome.png" alt="">
+                </div>
+                <div class="overlay">
+                    <button @click="redirectUser" class="btn-icon">Ver Proyecto <v-icon name="bi-arrow-bar-right"
+                            scale="1.2" /></button>
                 </div>
             </div>
         </div>
@@ -72,6 +75,35 @@
 <script setup>
 import Swal from 'sweetalert2';
 import router from '../router';
+
+const redirectMavAdmin = () => {
+    Swal.fire({
+        title: "MAV Administración",
+        text: "A continuación será redirigido a una página donde vera la informacion de la App de MAV para supervisores",
+        icon: "info",
+        showCancelButton: false,
+        confirmButtonText: "OK",
+        // allowOutsideClick: false,
+        showClass: {
+            popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+            `
+        },
+        hideClass: {
+            popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+            `
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            router.push({ name: 'mav-admin' });
+        }
+    });
+};
 
 const redirectMateApp = () => {
     Swal.fire({

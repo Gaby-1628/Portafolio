@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeVies from '../views/HomeView.vue';
 import AboutMe from "../components/AboutMe.vue";
 import MateWebView from "../views/MateWebView.vue";
-import MavView from "../views/MavView.vue";
 import LoginView from "../views/Primacy/PrimacyAdmin/LoginView.vue";
 import SingUpView from "../views/Primacy/PrimacyAdmin/SingUpView.vue";
 import HomePrimacyCRM from "../views/Primacy/PrimacyAdmin/HomePrimacyCRM.vue";
@@ -22,6 +21,7 @@ import LoginMateView from "../views/MateApp/LoginMateView.vue";
 import HomeMateView from "../views/MateApp/HomeMateView.vue";
 import RegisterView from "../views/MateApp/RegisterView.vue";
 import ResetPasswordView from "../views/MateApp/ResetPasswordView.vue";
+import MavAdminView from "../views/Mav/Mav-admin/MavAdminView.vue";
 
 const routes = [
     {
@@ -38,11 +38,6 @@ const routes = [
         path: '/mate-web',
         name: 'mate-conect',
         component: MateWebView
-    },
-    {
-        path: '/mav-admin',
-        name: 'mav-admin',
-        component: MavView
     },
     {
         path: '/primacy-admin',
@@ -138,6 +133,11 @@ const routes = [
         path: '/recovery-password',
         name: 'recovery',
         component: ResetPasswordView
+    },
+    {
+        path: '/login-mav-admin',
+        name: 'mav-admin',
+        component: MavAdminView
     }
 ]
 

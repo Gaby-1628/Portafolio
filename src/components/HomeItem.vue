@@ -15,9 +15,9 @@
                     <h2 style="color: #1BE5DD;">{{ typedDevelopment }}</h2>
                     <h2>{{ typedFront }}</h2>
                     <div class="content-btn">
-                        <button type="button" class="btn btn-outline-info" @click="downloadCV">
+                        <!-- <button type="button" class="btn btn-outline-info" @click="downloadCV">
                             <span class="text-span">Descargar CV</span> <v-icon name="ri-file-list-3-line" />
-                        </button>
+                        </button> -->
                         <button type="button" class="btn btn-outline-danger mx-4" @click="downpage">
                             <span class="text-span">Comenzar</span> <v-icon name="px-arrow-down" />
                         </button>
